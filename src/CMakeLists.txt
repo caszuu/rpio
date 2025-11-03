@@ -1,10 +1,11 @@
 # add optional drivers and capabilities
 add_subdirectory(itf)
-add_subdirectory(drv)
+# add_subdirectory(drv)
 
 # build final fw binary
 add_executable(rpio
     entry.c
+    misc.c
 )
 
 pico_set_program_name(rpio "rpio")
@@ -15,6 +16,8 @@ pico_enable_stdio_usb(rpio 0)
 
 target_link_libraries(rpio
     hardware_watchdog
+    pico_unique_id
+    pico_multicore
     pico_stdlib
 
     rpio_proto
