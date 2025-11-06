@@ -8,7 +8,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(PICO_BOARD pico2 CACHE STRING "Board type")
 
 # define firmware option configuration
-option(RPIO_ENABLE_HUB75 "Enable Hub75 driver." OFF)
+option(RPIO_ENABLE_HUB75 "Enable Hub75 driver." ON)
 option(RPIO_ENABLE_FB "Enable Framebuffer support." ON)
 
 option(RPIO_ENABLE_SPI "Enable SPI interface." ON)
