@@ -1,6 +1,6 @@
 # add optional drivers and capabilities
 add_subdirectory(itf)
-# add_subdirectory(drv)
+add_subdirectory(drv)
 
 # build final fw binary
 add_executable(rpio

@@ -35,10 +35,16 @@ bool itf_is_readable() {
 }
 
 void itf_write(void *src, uint32_t size, bool fin) {
+    if (size == 0)
+        return;
+
     spi_write_blocking(spi_inst, src, size);
 }
 
 void itf_read(void *dst, uint32_t size) {
+    if (size == 0)
+        return;
+
     spi_read_blocking(spi_inst, 0, dst, size);
 }
 
