@@ -29,7 +29,7 @@ target_link_libraries(rpio
 
 target_link_libraries(rpio itf_spi)
 
-if (RPIO_ENBALE_FB)
+if (RPIO_ENABLE_FB)
     target_link_libraries(rpio drv_fb)
 endif()
 

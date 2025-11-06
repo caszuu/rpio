@@ -105,7 +105,7 @@ void hub75_init(struct rpio_hub75_init *args) {
 
     dma_channel_set_config(hub_dma_ch, &c, false);
 
-    dma_irqn_set_channel_enabled(0, hub_dma_ch, true);
+    dma_irqn_set_channel_enabled(0, hub_dma_ch, true); // FIXME: setup irq on task core
     irq_add_shared_handler(DMA_IRQ_0, hub_row_irq, PICO_SHARED_IRQ_HANDLER_DEFAULT_ORDER_PRIORITY);
     irq_set_enabled(DMA_IRQ_0, true);
 

@@ -4,6 +4,9 @@
 #include <itf.h>
 #include <rpio.h>
 
+#include <fb/fb.h>
+#include <hub75/hub.h>
+
 static void task_loop() {
 }
 
@@ -25,13 +28,13 @@ static void cmd_loop() {
             misc_cmd(cmd);
             break;
 
-        // case rpio_ctype_fb:
-        //     fb_cmd(cmd);
-        //     break;
+        case rpio_ctype_fb:
+            fb_cmd(cmd);
+            break;
 
-        // case rpio_ctype_hub75:
-        //     hub75_cmd(cmd);
-        //     break;
+        case rpio_ctype_hub75:
+            hub75_cmd(cmd);
+            break;
 
         default:
             break; // FIXME: handle on itf? reset?
